@@ -63,6 +63,7 @@ void notify_port_state(uint8_t port_id)
         ports[port_idx].operational_state == PORT_UP ? "UP" : "DOWN");
 }
 
+// hello bro
 void recalculate_oper_state(port_t *port) {
     port_state_t prev_state = port->operational_state;
     port->operational_state = (port->admin_enabled && !port->fault_active) ? PORT_UP : PORT_DOWN;
