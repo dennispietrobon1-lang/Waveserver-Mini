@@ -21,13 +21,6 @@ void generate_traffic()
 
 	uint8_t client = (stats.client_port != 0) ? stats.client_port : (rand() % 4) + 3;
 	uint8_t line   = (stats.line_port   != 0) ? stats.line_port   : (rand() % 2) + 1; 
-	
-	//Generating the OTN frame
-	otn_frame_t frame = {0};
-	frame.header.client_port = client;
-	frame.header.line_port   = line;
-	frame.header.frame_id    = stats.next_frame_id;
-	strncpy(frame.data, "some payload", sizeof(frame.data) - 1);
     // TODO: F1 — Traffic Generation (/8 pts)
     //
     // Generate an OTN frame, query the connection manager for a valid route,
