@@ -52,14 +52,12 @@ void log_write(log_level_t level,
     if (f)
     {
         fputs(log_line, f);
-        fclose(f);
     }
     else
     {
         // can't open log file
         fprintf(stderr, "[logger] failed to open %s\n", LOG_FILE);
     }
-
 }
 
 int create_udp_server(uint16_t udp_port)

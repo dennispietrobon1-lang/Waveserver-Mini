@@ -1,3 +1,4 @@
+
 #include "common.h"
 #include <netinet/in.h>
 #include <stdint.h>
@@ -35,7 +36,7 @@ bool get_port_info(uint8_t port_id, port_t *out)
         return false;
     }
 
-    memcpy(out, resp.payload, sizeof(*out));
+    memcpy(out, resp.payload, sizeof(out));
     return true;
 }
 
@@ -186,7 +187,6 @@ void handle_delete_conn(const udp_message_t *req, udp_message_t *resp)
     if (found_conn == NULL) {
         err = "could not find connection with that name";
         LOG(LOG_ERROR, "%s (name=%s)", err, udp_payload->name);
-        set_error_msg(resp, err);
         return;
     }
 
